@@ -5,7 +5,7 @@ import Room from "./assets/Room";
 import { OrbitControls } from "@react-three/drei";
 
 const App = () => {
-    const [textureIndex, setTextureIndex] = useState(1);
+    const [textureIndex, setTextureIndex] = useState(0);
 
     return (
         <>
