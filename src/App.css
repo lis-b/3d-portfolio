@@ -1,0 +1,21 @@
+#selectors {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+#selectors button {
+    font-size: 50px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+#selectors button:active {
+    background: grey;
+}
