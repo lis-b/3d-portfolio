@@ -10,19 +10,14 @@ const useTextureNoFlip = (filename: string) =>
         return t;
     });
 
-function Room({ textureIndex, ...props }: any) {
-    const { nodes } = useGLTF("models/room.glb") as any;
-    const textures = [
-        useTextureNoFlip("textures/room.png"),
-        useTextureNoFlip("textures/roomA.png"),
-        useTextureNoFlip("textures/roomB.png"),
-        useTextureNoFlip("textures/roomC.png"),
-    ];
+function Room(props) {
+    const { nodes } = useGLTF("models/room.glb");
+    const texture = useTextureNoFlip("textures/room.png");
 
     return (
         <group {...props}>
             <mesh castShadow receiveShadow geometry={nodes.Cube.geometry} material={nodes.Cube.material}>
-                <meshStandardMaterial attach="material" map={textures[textureIndex]} />
+                <meshStandardMaterial attach="material" map={texture} />
             </mesh>
         </group>
     );
