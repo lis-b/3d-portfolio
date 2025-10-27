@@ -1,55 +1,22 @@
-import { Canvas, useFrame, type CameraProps } from "@react-three/fiber";
 import "./App.css";
-import Room from "./assets/Room";
-import { MathUtils, Vector3 } from "three";
 import { useDetectGPU } from "@react-three/drei";
+import App3D from "./App3D";
+import { Suspense } from "react";
 
-const cameraPos = new Vector3(0, 0.75, 3.25);
-const cameraProps: CameraProps = { fov: 50, position: cameraPos };
-const initCameraAngleX = cameraPos.angleTo(new Vector3(0, 0, 1)); // required since the camera is angled towards the origin
-const roomPos = new Vector3(0, -1.6, -0.75); // puts computers around world origin
+const AppLoader = () => {
+    return <>Loader</>;
+};
 
-const CameraMovement = () => {
-    useFrame((state) => {
-        // using lerp so the camera moves more gently
-        state.camera.rotation.x = MathUtils.lerp(
-            state.camera.rotation.x,
-            (state.pointer.y * Math.PI) / 50 - initCameraAngleX,
-            0.05,
-        );
-        state.camera.rotation.y = MathUtils.lerp(state.camera.rotation.y, (-state.pointer.x * Math.PI) / 15, 0.05);
-    });
-
-    return null;
+const AppFallback = () => {
+    return <>Fallback</>;
 };
 
 const App = () => {
-    const GPUTier = useDetectGPU();
+    const gpu = useDetectGPU();
 
-    console.log(GPUTier); // tester for those with not so great gpus
+    const shouldRender = gpu.type === "BENCHMARK" && gpu.tier !== 0 && !gpu.isMobile; // some computers seem to render without GPU, but the type is "FALLBACK"
 
-    return (
-        <Canvas
-            dpr={window.devicePixelRatio}
-            // shadows="soft"
-            camera={cameraProps}
-        >
-            <CameraMovement />
-
-            <ambientLight intensity={0.7} />
-
-            <group position={roomPos}>
-                <pointLight
-                    intensity={50}
-                    position={[0, 5, 6]}
-                    castShadow
-                    shadow-mapSize={[2048, 2048]}
-                    shadow-radius={2}
-                />
-                <Room position={[0, 0, 0]} />
-            </group>
-        </Canvas>
-    );
+    return <Suspense fallback={<AppLoader />}>{shouldRender ? <App3D /> : <AppFallback />}</Suspense>;
 };
 
 export default App;
