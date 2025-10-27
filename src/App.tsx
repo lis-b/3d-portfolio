@@ -22,7 +22,11 @@ const CameraMovement = () => {
 const App = () => {
     return (
         <>
-            <Canvas dpr={window.devicePixelRatio} shadows="soft" camera={cameraProps}>
+            <Canvas
+                dpr={window.devicePixelRatio}
+                // shadows="soft"
+                camera={cameraProps}
+            >
                 <CameraMovement />
 
                 <ambientLight intensity={0.7} />
