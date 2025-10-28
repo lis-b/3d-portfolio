@@ -30,15 +30,15 @@ const fontFamilies = {
 };
 
 const CameraMovement = () => {
-    // useFrame((state) => {
-    //     // using lerp so the camera moves more gently
-    //     state.camera.rotation.x = MathUtils.lerp(
-    //         state.camera.rotation.x,
-    //         (state.pointer.y * Math.PI) / 50 - initCameraAngleX,
-    //         0.05,
-    //     );
-    //     state.camera.rotation.y = MathUtils.lerp(state.camera.rotation.y, (-state.pointer.x * Math.PI) / 15, 0.05);
-    // });
+    useFrame((state) => {
+        // using lerp so the camera moves more gently
+        state.camera.rotation.x = MathUtils.lerp(
+            state.camera.rotation.x,
+            (state.pointer.y * Math.PI) / 50 - initCameraAngleX,
+            0.05,
+        );
+        state.camera.rotation.y = MathUtils.lerp(state.camera.rotation.y, (-state.pointer.x * Math.PI) / 15, 0.05);
+    });
 
     return null;
 };
