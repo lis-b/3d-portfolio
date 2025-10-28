@@ -10,7 +10,7 @@
 }
 
 #fallback #wrapper {
-  width: 600px;
+  max-width: 600px;
   padding: 50px;
   display: flex;
   flex-direction: column;
