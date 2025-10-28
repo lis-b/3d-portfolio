@@ -22,6 +22,12 @@ const pointerChangeFunctions = {
         document.body.style.cursor = "auto";
     },
 };
+const fontFamilies = {
+    customFont: {
+        normal: "/fonts/fixed_ibmplexmono_regular-msdf.json",
+        bold: "/fonts/fixed_ibmplexmono_bold-msdf.json",
+    },
+};
 
 const CameraMovement = () => {
     useFrame((state) => {
@@ -61,6 +67,8 @@ const LeftMonitor = () => {
     return (
         <group matrix={transformation} matrixAutoUpdate={false}>
             <Container
+                fontFamilies={fontFamilies}
+                fontFamily="customFont"
                 pixelSize={monitorPixelSize}
                 backgroundColor={monitorColor}
                 sizeX={monitorSize.x}
@@ -108,6 +116,8 @@ const RightMonitor = () => {
     return (
         <group matrix={transformation} matrixAutoUpdate={false}>
             <Container
+                fontFamilies={fontFamilies}
+                fontFamily="customFont"
                 pixelSize={monitorPixelSize}
                 backgroundColor={monitorColor}
                 sizeX={monitorSize.x}
