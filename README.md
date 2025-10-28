@@ -14,6 +14,7 @@ I built this simple little portfolio so I could have something while working on 
 ## Further work
 - [ ] __IMPORTANT OPTIMIZATION:__ Include performance monitor to enable/disable shadows
   - [ ] Alternatively, bake shadows and remap in Blender(?)
+- [ ] Create a better fallback page
+- [ ] Handle ultrawide monitors
 - [ ] Add a projects section(?)
 - [ ] Add a link to [Detoxolotl](https://github.com/Detoxolotl/Detoxolotl) on the game console
-- [ ] Create a better fallback page
