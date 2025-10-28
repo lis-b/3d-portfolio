@@ -1,7 +1,7 @@
 import { Canvas, useFrame, type CameraProps } from "@react-three/fiber";
 import Room from "./assets/Room";
 import { MathUtils, Matrix4, Vector2, Vector3 } from "three";
-import { Container, Text } from "@react-three/uikit";
+import { Container, Svg, Text } from "@react-three/uikit";
 
 const cameraPos = new Vector3(0, 0.75, 3.25);
 const cameraProps: CameraProps = { fov: 50, position: cameraPos };
@@ -66,17 +66,18 @@ const LeftMonitor = () => {
                 sizeX={monitorSize.x}
                 sizeY={monitorSize.y}
                 flexDirection="row"
-                onClick={() => window.open("/resume.pdf", "_blank")}
-                padding={10}
+                alignItems="center"
+                justifyContent="center"
+                onClick={() => window.open("resume.pdf", "_blank")}
                 color={monitorTextColor}
                 hover={{ backgroundColor: monitorHoverColor }}
                 active={{ backgroundColor: monitorActiveColor }}
                 {...pointerChangeFunctions}
             >
-                <Text>document icon</Text>
-                <Container flexDirection="column">
-                    <Text>Name Lastname</Text>
-                    <Text>Resume.pdf</Text>
+                <Svg src="/icons/document.svg" width={45} />
+                <Container flexDirection="column" paddingRight={5}>
+                    <Text fontWeight="bold">Name Lastnam</Text>
+                    <Text fontWeight="bold">Resume.pdf</Text>
                 </Container>
             </Container>
         </group>
@@ -134,8 +135,12 @@ const RightMonitor = () => {
                     justifyContent="center"
                     hover={{ backgroundColor: monitorHoverColor }}
                     active={{ backgroundColor: monitorActiveColor }}
+                    padding={10}
+                    flexDirection="row"
+                    gap={7}
                 >
-                    <Text>gh logo</Text>
+                    <Svg src="/icons/github.svg" />
+                    <Text fontWeight="bold">user</Text>
                 </Container>
 
                 <Container
