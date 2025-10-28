@@ -1,0 +1,27 @@
+#fallback {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+#fallback #wrapper {
+  width: 600px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#fallback .section a {
+  color: inherit;
+}
+
+#fallback img {
+    border: 3px solid black;
+    border-radius: 5px;
+}

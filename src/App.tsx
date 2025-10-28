@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import "./App.css";
 import { useDetectGPU } from "@react-three/drei";
 import AppLoader from "./AppLoader";
 import App3D from "./App3D";

@@ -1,4 +1,5 @@
 import type { useDetectGPU } from "@react-three/drei";
+import "./AppFallback.css";
 
 type AppFallbackProps = {
     gpu: ReturnType<typeof useDetectGPU>;
@@ -34,6 +35,8 @@ const AppFallback: React.FC<AppFallbackProps> = ({ gpu }) => {
                 <div className="section">
                     Feel free to <a href="mailto:hello@lisab.dev">email me</a> if you think this is an issue!
                 </div>
+
+                <img src="/screenshot.png" />
 
                 <div className="section">
                     To make sure you get the same information as those who can view my site in its full glory, you can:
