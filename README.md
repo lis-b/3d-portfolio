@@ -12,7 +12,7 @@ I built this simple little portfolio so I could have something while working on 
 - [IBM Plex Mono Font](https://fonts.google.com/specimen/IBM+Plex+Mono) 
 
 ## Further work
-- [ ] Include performance monitor to enable/disable shadows
+- [ ] __IMPORTANT OPTIMIZATION:__ Include performance monitor to enable/disable shadows
   - [ ] Alternatively, bake shadows and remap in Blender(?)
 - [ ] Add a projects section(?)
 - [ ] Add a link to [Detoxolotl](https://github.com/Detoxolotl/Detoxolotl) on the game console
