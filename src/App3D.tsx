@@ -9,6 +9,19 @@ const initCameraAngleX = cameraPos.angleTo(new Vector3(0, 0, 1)); // required si
 const roomPos = new Vector3(0, -1.6, -0.75); // puts computers around world origin
 
 const monitorSize = new Vector2(1.31, 0.751); // ever so slightly larger to fill in any gaps
+const monitorPixelSize = 0.0075;
+const monitorTextColor = "#000000";
+const monitorColor = "#818b90";
+const monitorHoverColor = "#8d989e";
+const monitorActiveColor = "#97a4a9";
+const pointerChangeFunctions = {
+    onPointerEnter: () => {
+        document.body.style.cursor = "pointer";
+    },
+    onPointerLeave: () => {
+        document.body.style.cursor = "auto";
+    },
+};
 
 const CameraMovement = () => {
     useFrame((state) => {
@@ -47,8 +60,24 @@ const LeftMonitor = () => {
 
     return (
         <group matrix={transformation} matrixAutoUpdate={false}>
-            <Container backgroundColor="grey" sizeX={monitorSize.x} sizeY={monitorSize.y} flexDirection="row">
-                <Text>This is the left monitor.</Text>
+            <Container
+                pixelSize={monitorPixelSize}
+                backgroundColor={monitorColor}
+                sizeX={monitorSize.x}
+                sizeY={monitorSize.y}
+                flexDirection="row"
+                onClick={() => window.open("/resume.pdf", "_blank")}
+                padding={10}
+                color={monitorTextColor}
+                hover={{ backgroundColor: monitorHoverColor }}
+                active={{ backgroundColor: monitorActiveColor }}
+                {...pointerChangeFunctions}
+            >
+                <Text>document icon</Text>
+                <Container flexDirection="column">
+                    <Text>Name Lastname</Text>
+                    <Text>Resume.pdf</Text>
+                </Container>
             </Container>
         </group>
     );
@@ -77,8 +106,50 @@ const RightMonitor = () => {
 
     return (
         <group matrix={transformation} matrixAutoUpdate={false}>
-            <Container backgroundColor="grey" sizeX={monitorSize.x} sizeY={monitorSize.y} flexDirection="row">
-                <Text>This is the right monitor.</Text>
+            <Container
+                pixelSize={monitorPixelSize}
+                backgroundColor={monitorColor}
+                sizeX={monitorSize.x}
+                sizeY={monitorSize.y}
+                flexDirection="column"
+                alignItems="stretch"
+                justifyContent="center"
+                color={monitorTextColor}
+                {...pointerChangeFunctions}
+            >
+                <Container
+                    paddingTop={3}
+                    paddingBottom={4}
+                    onClick={() => window.open("mailto:email@gmail.com")}
+                    justifyContent="center"
+                    hover={{ backgroundColor: monitorHoverColor }}
+                    active={{ backgroundColor: monitorActiveColor }}
+                >
+                    <Text>email@gmail.com</Text>
+                </Container>
+
+                <Container
+                    onClick={() => window.open("https://github.com/", "_blank")}
+                    flexGrow={1}
+                    justifyContent="center"
+                    hover={{ backgroundColor: monitorHoverColor }}
+                    active={{ backgroundColor: monitorActiveColor }}
+                >
+                    <Text>gh logo</Text>
+                </Container>
+
+                <Container
+                    paddingTop={3}
+                    paddingBottom={4}
+                    onClick={() => window.open("https://github.com/", "_blank")}
+                    justifyContent="center"
+                    hover={{ backgroundColor: monitorHoverColor }}
+                    active={{ backgroundColor: monitorActiveColor }}
+                >
+                    <Text>
+                        {"<"}source code{" />"}
+                    </Text>
+                </Container>
             </Container>
         </group>
     );
