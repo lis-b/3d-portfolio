@@ -16,5 +16,6 @@ I built this simple little portfolio so I could have something while working on 
   - [ ] Alternatively, bake shadows and remap in Blender(?)
 - [ ] Create a better fallback page
 - [ ] Handle ultrawide monitors
+- [ ] Deal with font loading flash on canvas
 - [ ] Add a projects section(?)
 - [ ] Add a link to [Detoxolotl](https://github.com/Detoxolotl/Detoxolotl) on the game console
