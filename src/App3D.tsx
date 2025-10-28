@@ -68,7 +68,7 @@ const LeftMonitor = () => {
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="center"
-                onClick={() => window.open("resume.pdf", "_blank")}
+                onClick={() => window.open("/LisaBrothers_Resume.pdf", "_blank")}
                 color={monitorTextColor}
                 hover={{ backgroundColor: monitorHoverColor }}
                 active={{ backgroundColor: monitorActiveColor }}
@@ -76,7 +76,7 @@ const LeftMonitor = () => {
             >
                 <Svg src="/icons/document.svg" width={45} />
                 <Container flexDirection="column" paddingRight={5}>
-                    <Text fontWeight="bold">Name Lastnam</Text>
+                    <Text fontWeight="bold">Lisa Brothers</Text>
                     <Text fontWeight="bold">Resume.pdf</Text>
                 </Container>
             </Container>
@@ -121,16 +121,16 @@ const RightMonitor = () => {
                 <Container
                     paddingTop={3}
                     paddingBottom={4}
-                    onClick={() => window.open("mailto:email@gmail.com")}
+                    onClick={() => window.open("mailto:hello@lisab.dev")}
                     justifyContent="center"
                     hover={{ backgroundColor: monitorHoverColor }}
                     active={{ backgroundColor: monitorActiveColor }}
                 >
-                    <Text>email@gmail.com</Text>
+                    <Text>hello@lisab.dev</Text>
                 </Container>
 
                 <Container
-                    onClick={() => window.open("https://github.com/", "_blank")}
+                    onClick={() => window.open("https://github.com/lis-b", "_blank")}
                     flexGrow={1}
                     justifyContent="center"
                     hover={{ backgroundColor: monitorHoverColor }}
@@ -140,13 +140,13 @@ const RightMonitor = () => {
                     gap={7}
                 >
                     <Svg src="/icons/github.svg" />
-                    <Text fontWeight="bold">user</Text>
+                    <Text fontWeight="bold">lis-b</Text>
                 </Container>
 
                 <Container
                     paddingTop={3}
                     paddingBottom={4}
-                    onClick={() => window.open("https://github.com/", "_blank")}
+                    onClick={() => window.open("https://github.com/lis-b/3d-portfolio", "_blank")}
                     justifyContent="center"
                     hover={{ backgroundColor: monitorHoverColor }}
                     active={{ backgroundColor: monitorActiveColor }}
