@@ -1,6 +1,5 @@
 import { Matrix4, Vector2 } from "three";
 import { Container, Svg, Text } from "@react-three/uikit";
-import { preload } from "react-dom";
 
 const monitorSize = new Vector2(1.31, 0.751); // ever so slightly larger to fill in any gaps
 const monitorPixelSize = 0.0075;
@@ -151,13 +150,6 @@ const RightMonitor = () => {
 };
 
 const Monitors = () => {
-    preload("/fonts/fixed_ibmplexmono_regular-msdf.json");
-    preload("/fonts/fixedibmplexmonoregular.png");
-    preload("/fonts/fixed_ibmplexmono_bold-msdf.json");
-    preload("/fonts/fixedibmplexmonobold.png");
-    preload("/icons/github.svg");
-    preload("/icons/document.svg");
-
     return (
         <>
             <LeftMonitor />
