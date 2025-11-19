@@ -53,7 +53,7 @@ const LeftMonitor = () => {
                 sizeX={monitorSize.x}
                 sizeY={monitorSize.y}
                 flexDirection="row"
-                alignItems="center"
+                alignItems="stretch"
                 justifyContent="center"
                 onClick={() => window.open("/LisaBrothers_Resume.pdf", "_blank")}
                 color={monitorTextColor}
@@ -61,10 +61,18 @@ const LeftMonitor = () => {
                 active={{ backgroundColor: monitorActiveColor }}
                 {...pointerChangeFunctions}
             >
-                <Svg src="/icons/document.svg" width={45} />
-                <Container flexDirection="column" paddingRight={5}>
-                    <Text fontWeight="bold">Lisa Brothers</Text>
-                    <Text fontWeight="bold">Resume.pdf</Text>
+                <Container alignItems="center">
+                    <Svg src="/icons/document.svg" width={45} />
+                </Container>
+                <Container flexDirection="column" paddingRight={5} justifyContent="space-between" alignItems="flex-end">
+                    <Container height={10} />
+                    <Container flexDirection="column">
+                        <Text fontWeight="bold">Lisa Brothers</Text>
+                        <Text fontWeight="bold">Resume.pdf</Text>
+                    </Container>
+                    <Container height={10} textAlign="right">
+                        <Text fontSize={6}>Last updated 18 Nov 2025</Text>
+                    </Container>
                 </Container>
             </Container>
         </group>
